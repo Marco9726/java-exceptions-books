@@ -1,3 +1,5 @@
+package books;
+
 
 public class Book {
 	
@@ -48,14 +50,10 @@ public class Book {
 		this.publisher = publisher;
 	}
 	
-	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return getTitle() + "\n"
-				+ getPages() + "\n"
-				+ getAuthor() + "\n"
-				+ getPublisher() + "\n";
+		return getTitle() + "\n" + getPages() + "\n" + getAuthor() + "\n" + getPublisher();
 	}
 	
 	
