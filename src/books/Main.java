@@ -1,5 +1,6 @@
 package books;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -29,11 +30,20 @@ public class Main {
 				System.out.println("Qual'è l'editore?");
 				String publisher = sc.next();
 				
-				Book b = new Book ( title, pages, author, publisher );
-				books[i]  = b;
+				try {
+					
+					Book b = new Book ( title, pages, author, publisher );
+					books[i]  = b;
+				} catch(Exception e) {
+					
+					System.err.println("Errore nella creazioneel libro  " + e.getMessage());
+				}
+				
 			}		
 			
 		}
+		
+		System.out.println(Arrays.asList(books));
 		
 	}
 }

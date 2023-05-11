@@ -9,7 +9,7 @@ public class Book {
 	private String publisher;
 	
 //	CONSTRUCTOR
-	public Book ( String title, int pages, String author, String publisher) {
+	public Book ( String title, int pages, String author, String publisher) throws Exception {
 		
 		setTitle(title);
 		setPages(pages);
@@ -22,7 +22,12 @@ public class Book {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(String title) throws Exception {
+		
+		if ( title .isEmpty()) {
+			
+			throw new Exception("il titolo non può essere vuoto");
+		}
 		this.title = title;
 	}
 
@@ -30,7 +35,12 @@ public class Book {
 		return pages;
 	}
 
-	public void setPages(int pages) {
+	public void setPages(int pages) throws Exception {
+		
+		if ( pages <= 0) {
+			
+			throw new Exception("Le pagine devono essere più di 0");
+		}
 		this.pages = pages;
 	}
 
@@ -38,7 +48,12 @@ public class Book {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(String author) throws Exception {
+		
+		if ( author.isEmpty()) {
+			
+			throw new Exception("il titolo non può essere vuoto");
+		}
 		this.author = author;
 	}
 
