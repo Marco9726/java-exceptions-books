@@ -1,11 +1,14 @@
 package books;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -36,14 +39,35 @@ public class Main {
 					books[i]  = b;
 				} catch(Exception e) {
 					
-					System.err.println("Errore nella creazioneel libro  " + e.getMessage());
-				}
+					i--;
+					System.err.println("Errore nella creazione del libro" + e.getMessage());
+				} 
 				
 			}		
 			
+			sc.close();
 		}
 		
-		System.out.println(Arrays.asList(books));
-		
+		FileWriter myWriter = new FileWriter("./BookJava.txt");
+
+        for (int i = 0; i < intBooks; i++) {
+
+            Book l = books[i];
+            myWriter.write(l.toString() + "\n");
+        }
+
+        myWriter.close();
+
+        File bookFile = new File("./BookJava.txt");
+        Scanner reader = new Scanner(bookFile);
+
+        while (reader.hasNextLine()) {
+
+            String line = reader.nextLine();
+            System.out.println(line);
+
+        }
+
+        reader.close();
 	}
 }

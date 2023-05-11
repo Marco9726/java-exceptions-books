@@ -68,7 +68,7 @@ public class Book {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return getTitle() + "\n" + getPages() + "\n" + getAuthor() + "\n" + getPublisher();
+		return getTitle() + "\n" + getPages() + "\n" + getAuthor() + "\n" + getPublisher() + "\n" + "----------";
 	}
 	
 	
